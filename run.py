@@ -40,3 +40,8 @@ class BattleshipGame:
                     print("Please enter how many columns you want between 3 and 8")
             except ValueError:
                 print("Please enter number between 3 and 8.")
+    
+    def setup_game(self):
+        self.get_board_size()
+        self.player_board = self.create_board(self.rows, self.cols)
+        self.opponent_board = self.create_board(self.rows, self.cols)
