@@ -19,6 +19,24 @@ class BattleshipGame:
 
     def create_board(self, rows, cols):
         return [["O" for _ in range(cols)] for _ in range(rows)]
-    
-    def get_board_size(self):       
-        
+
+    def get_board_size(self):
+        while True:
+            try:
+                self.rows = int(input("Please enter how many rows you want between 3 and 8: "))
+                if 3 <= self.rows <= 8:
+                    break
+                else:
+                    print("Please enter how many rows you want between 3 and 8.")
+            except ValueError:
+                print("Please enter number between 3 and 8.")
+
+        while True:
+            try:
+                self.cols = int(input("Please enter how many columns you want between 3 and 8: "))
+                if 3 <= self.cols <= 8:
+                    break
+                else:
+                    print("Please enter how many columns you want between 3 and 8")
+            except ValueError:
+                print("Please enter number between 3 and 8.")
