@@ -51,7 +51,15 @@ class BattleshipGame:
        
         for row in self.player_board:
             print(" ".join(row))
-                    print("Computer:")
+            print("Computer:")
         for row in self.opponent_board:
             print(" ".join(["O" if cell != "X" and cell != "*" else cell for cell in row]))
             
+    def place_ships(self, board, num_ships):
+        for _ in range(num_ships):
+            x = randint(0, self.rows - 1)
+            y = randint(0, self.cols - 1)
+            while board[x][y] == "@":
+                x = randint(0, self.rows - 1)
+                y = randint(0, self.cols - 1)
+            board[x][y] = "@"
