@@ -7,7 +7,7 @@ from random import randint #inport randint so random guesses are working
 
 class BattleshipGame:
     def __init__(self):
-        print("Welcome to the battleship Game. You will play against the computer. \nAnd here is little more information:\n@ = your ship \n* = destroyed ship \nX = miss \nStarting column and row is always 0")
+        print("Welcome to the battleship Game. You will play against the computer. \nAnd here is little more information:\n@ = your ship \n* = destroyed ship \nX = miss \nFirst column and row is always 0")
         self.player_name = ""
         self.rows = 0
         self.cols = 0
