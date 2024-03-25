@@ -7,6 +7,7 @@ from random import randint #inport randint so random guesses are working
 
 class BattleshipGame:
     def __init__(self):
+        print("Welcome to the battleship Game. You will play against the computer. \nAnd here is little more information:\n@ = your ship \n* = destroyed ship \nX = miss \nStarting column and row is always 0")
         self.player_name = ""
         self.rows = 0
         self.cols = 0
@@ -27,7 +28,7 @@ class BattleshipGame:
         self.opponent_score = 0
         self.previous_guesses = set()
         self.reset_game_flag = True  # Set the flag to True to indicate game reset
-        print("New game is ready!")
+        
  #function to make the board for game
     def create_board(self, rows, cols):
         return [["O" for _ in range(cols)] for _ in range(rows)]
@@ -130,7 +131,7 @@ class BattleshipGame:
         while True:  # Outer loop for replaying the game
             # ask player to put their name
             self.player_name = input("Please enter your name: ")
-            print(f"Hello, {self.player_name}! Lets prepare yout game!")
+            print(f"Hello, {self.player_name}! Lets prepare your game!")
 
             # Set up the game with custom board sizes
             self.setup_game()
@@ -166,7 +167,7 @@ class BattleshipGame:
             else:
                 # Reset all game data if the player wants to play again
                 self.reset_game()
-                print("Starting a new game...")
+                
 
         print("Thank you for playing Battleship!")
         
