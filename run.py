@@ -42,6 +42,16 @@ class BattleshipGame:
                 print("Please enter number between 3 and 8.")
     
     def setup_game(self):
-        self.get_board_size()
-        self.player_board = self.create_board(self.rows, self.cols)
-        self.opponent_board = self.create_board(self.rows, self.cols)
+               self.get_board_size()
+               self.player_board = self.create_board(self.rows, self.cols)
+               self.opponent_board = self.create_board(self.rows, self.cols)
+   
+    def print_boards(self):
+        print(f"{self.player_name} board:")
+       
+        for row in self.player_board:
+            print(" ".join(row))
+                    print("Computer:")
+        for row in self.opponent_board:
+            print(" ".join(["O" if cell != "X" and cell != "*" else cell for cell in row]))
+            
