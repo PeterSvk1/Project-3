@@ -27,7 +27,7 @@ class BattleshipGame:
         self.opponent_score = 0
         self.previous_guesses = set()
         self.reset_game_flag = True  # Set the flag to True to indicate game reset
-        print("New game is ready! Please enter your name")
+        print("New game is ready!")
  #funtion to make the board for game
     def create_board(self, rows, cols):
         return [["O" for _ in range(cols)] for _ in range(rows)]
@@ -84,10 +84,10 @@ class BattleshipGame:
         self.print_boards()
         while True:
             try:
-                guess_x = int(input("First row is always 0 - Enter the row: (enter no to start new game): "))
+                guess_x = int(input("First row is always 0 - Enter the row: (enter -1 to start new game): "))
 
                 # Check if the player wants to start new game
-                if guess_x == "no":
+                if guess_x == -1:
                     self.reset_game()
                     return
 
@@ -130,7 +130,7 @@ class BattleshipGame:
         while True:  # Outer loop for replaying the game
             # Prompt the user to input their name
             self.player_name = input("Please enter your name: ")
-            print(f"Hello, {self.player_name}! Battleship game is ready for you.")
+            print(f"Hello, {self.player_name}! Lets prepare yout game!")
 
             # Set up the game with custom board sizes
             self.setup_game()
