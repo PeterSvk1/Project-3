@@ -93,7 +93,7 @@ class BattleshipGame:
                     self.reset_game()
                     return
 
-                guess_y = int(input("First column is always 0 - Enter the column: "))
+                guess_y = int(input("Enter the column: "))
 
                 if not self.valid_guess(guess_x, guess_y):
                     print("Please use number between 3 and 8.")
@@ -101,8 +101,9 @@ class BattleshipGame:
                     # Checks current guess and compares it to previous guesses
                     self.previous_guesses.add((guess_x, guess_y))
                     break
+                
             except ValueError:
-                print("Please use number between 3 and 8.")
+                    print("Please use number between 3 and 8.")
 
         if self.opponent_board[guess_x][guess_y] == "@":
             print("Player hit a ship!")
