@@ -85,7 +85,7 @@ class BattleshipGame:
         self.print_boards()
         while True:
             try:
-                guess_x = int(input("First row is always 0 - Enter the row: (enter -1 to start new game): "))
+                guess_x = int(input("First row is always 0 - Enter the row (enter -1 to start new game): "))
 
                 # Check if the player wants to start new game
                 if guess_x == -1:
@@ -149,18 +149,18 @@ class BattleshipGame:
                 if self.reset_game_flag:
                     break
 
-                # Check if player has won
+                # Check if player has won and prints score
                 if self.player_score == num_ships:
                     print(f"Congratulations! You won! Your score: {self.player_score}-{self.opponent_score}")
                     break
 
                 self.computer_turn()
 
-                # Check if computer has won
+                # Check if computer has won and prints score
                 if self.opponent_score == num_ships:
                     print(f"Game over! You lost and computer won! Your score: {self.player_score}-{self.opponent_score}")
                     break
-
+            
             play_again = input("Do you want to play again? (yes/no): ")
             if play_again.lower() != "yes":
                 break
