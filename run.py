@@ -126,4 +126,50 @@ class BattleshipGame:
     def display_scores(self): #displays the scores of the player and the computer
         print(f"\nScores - {self.player_name}: {self.player_score}, Computer: {self.opponent_score}")
         
+    def play(self):
+        while True:  # Outer loop for replaying the game
+            # Prompt the user to input their name
+            self.player_name = input("Please enter your name: ")
+            print(f"Hello, {self.player_name}! Battleship game is ready for you.")
 
+            # Set up the game with custom board sizes
+            self.setup_game()
+
+            # Place ships on player and computer boards
+            num_ships = 3  # number of ships, can be changed
+            self.place_ships(self.player_board, num_ships)
+            self.place_ships(self.opponent_board, num_ships)
+
+            # Main game loop
+            while True:
+                self.reset_game_flag = False
+                self.player_turn()
+
+                if self.reset_game_flag:
+                    break
+
+                # Check if player has won
+                if self.player_score == num_ships:
+                    print(f"Congratulations! You won! Your score: {self.player_score}-{self.opponent_score}")
+                    break
+
+                self.computer_turn()
+
+                # Check if computer has won
+                if self.opponent_score == num_ships:
+                    print(f"Game over! You lost and computer won! Your score: {self.player_score}-{self.opponent_score}")
+                    break
+
+            play_again = input("Do you want to play again? (yes/no): ")
+            if play_again.lower() != "yes":
+                break
+            else:
+                # Reset all game data if the player wants to play again
+                self.reset_game()
+                print("Starting a new game...")
+
+        print("Thank you for playing Battleship!")
+        
+# Start the game
+game = BattleshipGame()
+game.play()
