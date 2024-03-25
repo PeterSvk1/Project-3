@@ -9,6 +9,7 @@ class BattleshipGame:
     def __init__(self):
         # Welcome message and game information
         print("Welcome to the battleship Game. You will play against the computer. \nAnd here is little more information:\n@ = your ship \n* = destroyed ship \nX = miss \nFirst column and row is always 0")
+        print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
         # Initializing game attributes
         self.player_name = ""
         self.rows = 0
