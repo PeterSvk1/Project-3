@@ -86,7 +86,7 @@ class BattleshipGame:
         self.print_boards()
         while True:
             try:
-                guess_x = int(input("First row is always 0 - Enter the row (enter -1 to start new game): "))
+                guess_x = int(input("Enter the row (enter -1 to start new game): "))
 
                 # Check if the player wants to start new game
                 if guess_x == -1:
