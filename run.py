@@ -63,3 +63,6 @@ class BattleshipGame:
                 x = randint(0, self.rows - 1)
                 y = randint(0, self.cols - 1)
             board[x][y] = "@"
+
+    def valid_guess(self, x, y):
+        return (0 <= x < self.rows) and (0 <= y < self.cols) and ((x, y) not in self.previous_guesses)
