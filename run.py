@@ -97,3 +97,16 @@ class BattleshipGame:
         else:
             print("Player missed.")
             self.opponent_board[guess_x][guess_y] = "X"
+            
+    def computer_turn(self):
+        print("\nComputer Turn")
+        computer_guess_x = randint(0, self.rows - 1)
+        computer_guess_y = randint(0, self.cols - 1)
+
+        if self.player_board[computer_guess_x][computer_guess_y] == "@":
+            print("Computer hit a ship!")
+            self.player_board[computer_guess_x][computer_guess_y] = "*"
+            self.opponent_score += 1
+        else:
+            print("Computer missed.")
+            self.player_board[computer_guess_x][computer_guess_y] = "X"
