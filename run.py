@@ -66,3 +66,34 @@ class BattleshipGame:
 
     def valid_guess(self, x, y):
         return (0 <= x < self.rows) and (0 <= y < self.cols) and ((x, y) not in self.previous_guesses)
+
+    def player_turn(self):
+        print("Your Turn")
+        self.print_boards()
+        while True:
+            try:
+                guess_x = int(input("First row is always 0 - Enter the row: (enter no to start new game): "))
+
+                # Check if the player wants to start new game
+                if guess_x == "no":
+                    self.reset_game()
+                    return
+
+                guess_y = int(input("First column is always 0 - Enter the column: "))
+
+                if not self.valid_guess(guess_x, guess_y):
+                    print("Please use number between 3 and 8.")
+                else:
+                    # Checks current guess and compares it to previous guesses
+                    self.previous_guesses.add((guess_x, guess_y))
+                    break
+            except ValueError:
+                print("Please use number between 3 and 8.")
+
+        if self.opponent_board[guess_x][guess_y] == "@":
+            print("Player hit a ship!")
+            self.opponent_board[guess_x][guess_y] = "*"
+            self.player_score += 1
+        else:
+            print("Player missed.")
+            self.opponent_board[guess_x][guess_y] = "X"
