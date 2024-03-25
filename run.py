@@ -1,10 +1,9 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
+
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 
 # Beggining of the code for the project 3: BATTLESHIPS project
-from random import randint
+from random import randint #inport randint so random guesses are working
 
 class BattleshipGame:
     def __init__(self):
@@ -16,10 +15,10 @@ class BattleshipGame:
         self.player_score = 0
         self.opponent_score = 0
         self.previous_guesses = set()
-
+#funtion to make the board for game
     def create_board(self, rows, cols):
         return [["O" for _ in range(cols)] for _ in range(rows)]
-
+#function to set up board size according to user input
     def get_board_size(self):
         while True:
             try:
@@ -40,12 +39,12 @@ class BattleshipGame:
                     print("Please enter how many columns you want between 3 and 8")
             except ValueError:
                 print("Please enter number between 3 and 8.")
-    
+#set up game its get board size from user input    
     def setup_game(self):
                self.get_board_size()
                self.player_board = self.create_board(self.rows, self.cols)
                self.opponent_board = self.create_board(self.rows, self.cols)
-   
+#print boards for player and computer   
     def print_boards(self):
         print(f"{self.player_name} board:")
        
@@ -54,7 +53,7 @@ class BattleshipGame:
             print("Computer:")
         for row in self.opponent_board:
             print(" ".join(["O" if cell != "X" and cell != "*" else cell for cell in row]))
-            
+#places randomly ships on board            
     def place_ships(self, board, num_ships):
         for _ in range(num_ships):
             x = randint(0, self.rows - 1)
@@ -63,10 +62,10 @@ class BattleshipGame:
                 x = randint(0, self.rows - 1)
                 y = randint(0, self.cols - 1)
             board[x][y] = "@"
-
+#function to check if guess is valid and check if it is in the previous guesses
     def valid_guess(self, x, y):
         return (0 <= x < self.rows) and (0 <= y < self.cols) and ((x, y) not in self.previous_guesses)
-
+#start of player turn function
     def player_turn(self):
         print("Your Turn")
         self.print_boards()
@@ -97,7 +96,7 @@ class BattleshipGame:
         else:
             print("Player missed.")
             self.opponent_board[guess_x][guess_y] = "X"
-            
+#function for computer turn            
     def computer_turn(self):
         print("\nComputer Turn")
         computer_guess_x = randint(0, self.rows - 1)
@@ -110,3 +109,8 @@ class BattleshipGame:
         else:
             print("Computer missed.")
             self.player_board[computer_guess_x][computer_guess_y] = "X"
+            
+    def display_scores(self): #displays the scores of the player and the computer
+        print(f"\nScores - {self.player_name}: {self.player_score}, Computer: {self.opponent_score}")
+        
+
