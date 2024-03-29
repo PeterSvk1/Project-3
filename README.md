@@ -46,3 +46,32 @@ Winner is the one who has atleast 1 ship left on the battlefield.
 - player can change number of ships
 
 ## Data model
+I decided to to use BattleshipGame class as my model. The game creates one instance of BattleshipGame class which can hold the players board
+and computer board.
+
+The BattleshipGame class stores the board size, the number of ships, the possition of the ships, the guesses on the board, and small details
+like players name, players board, computer board, scores.
+
+The class also has methods to help play game, such as print out current board after each turn.
+
+## Testing
+I have manually tested this project by doing following:
+- passed code though a PEP8 linter and confirmed there are no problems
+- Given invalid inputs: same input twice, numbers are expected and such
+- Tested in local terminal and the Code intitute heroku terminal
+
+## Bugs
+Solved bugs:
+- my validate function wasnt printed out and I managed to fix it by adding
+        if (x, y) in p:
+            print("Already used coordinates. Try again.")
+            return False
+        return 0 <= x < r and 0 <= y < c
+
+## Bugs to fix
+- Hopefully none
+
+## Validator tesing
+- PEP8 
+     - no errors were returned from PEP8online.com
+![Responsice Mockup](https://github.com/PeterSvk1/Project-3/blob/main/views/pep8.jpg)
