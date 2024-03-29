@@ -75,3 +75,16 @@ Solved bugs:
 - PEP8 
      - no errors were returned from PEP8online.com
 ![Responsice Mockup](https://github.com/PeterSvk1/Project-3/blob/main/views/pep8.jpg)
+
+## Deployement
+This project was deployed  using Code institute mock terminal for heroku.
+  - Steps for deployement:
+    - Fork or clone this repository
+    - Create new heroku app
+    - Set the buildpacks to Python and NodeJS in that order
+    - Link the heroku app to the repository
+    - Click on https://battleshipsvk-a75ed08282e0.herokuapp.com/
+
+## Credits
+- Code institute for terminal
+- Idea how to start and inspiration: https://www.youtube.com/watch?v=tF1WRCrd_HQ  and https://www.youtube.com/watch?v=4sqtzZQpDJE
