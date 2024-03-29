@@ -30,4 +30,11 @@ Winner is the one who has atleast 1 ship left on the battlefield.
 - accepts user imputs
 - Maintains scores
 - tells player if he missed or not
-![Responsice Mockup](https://github.com/PeterSvk1/Project-3/blob/main/views/start.jpg)
+![Responsice Mockup](https://github.com/PeterSvk1/Project-3/blob/main/views/score.jpg)
+
+- Input validation and error checking
+- you cannot enter wrong coordinations or use letters
+- you cannot enter same coordinations twice
+- you can restart the game
+![Responsice Mockup](https://github.com/PeterSvk1/Project-3/blob/main/views/inputs.jpg)
+
