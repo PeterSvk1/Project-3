@@ -24,4 +24,10 @@ Winner is the one who has atleast 1 ship left on the battlefield.
 - Game will generate board according to players wishes
 - Ships are randomly generated on the board
 
-![Responsice Mockup]())
+![Responsice Mockup](https://github.com/PeterSvk1/Project-3/blob/main/views/start.jpg)
+
+- Play against computer
+- accepts user imputs
+- Maintains scores
+- tells player if he missed or not
+![Responsice Mockup](https://github.com/PeterSvk1/Project-3/blob/main/views/start.jpg)
